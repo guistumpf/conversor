@@ -4,26 +4,30 @@
         <title>
 Conversor
         </title>
+        <link rel="stylesheet" href="style.css">
         </head>
         <body>
-            <h1>Converta F° para C°</h1>
+             <div>
+            <h1>Converta °F para °C</h1>
             <p>Digite um valor para conversão:</p>
-        <label>F°</label>
+        <label>°F</label>
             <input type="number" placeholder="Fahrenheit" id="display" oninput="alterarvalor()" onchange="alterarvalor()">
 
-<p>Celsius: <span id="temperaturacelsius"></span></p>
+<p id="segundo">Celsius: <span id="temperaturacelsius"></span></p>
+</div>
         
 
 <script>
 function alterarvalor(){
 let Fahrenheit = parseFloat(document.getElementById("display").value);
 
-   if (isNaN(Fahrenheit)) {
+   
+if (isNaN(Fahrenheit)) {
         document.getElementById("display").value = NaN;
     } 
 
 let celsius = (Fahrenheit - 32) * 5/9;
-document.getElementById("temperaturacelsius").innerHTML = celsius.toFixed(1);
+document.getElementById("temperaturacelsius").innerHTML = celsius.toFixed(1) + "°C"
 }
 
 
