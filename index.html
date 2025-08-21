@@ -8,35 +8,28 @@ Conversor
         <body>
             <h1>Converta F° para C°</h1>
             <p>Digite um valor para conversão:</p>
-        <label for="input" id="conv">F°</label>
-            <input type="number" placeholder="Fahrenheit" id="display" oninput="alterarvalor()">
+        <label>F°</label>
+            <input type="number" placeholder="Fahrenheit" id="display" oninput="alterarvalor()" onchange="alterarvalor()">
 
-<p>Celsius: <span id="temperaturacelsius"></span>0</p>
+<p>Celsius: <span id="temperaturacelsius"></span></p>
         
 
 <script>
 function alterarvalor(){
-if (document.getElementById("display") == 0) {
-        document.getElementById("temperaturacelsius").textContent = "0";
-    }
+let Fahrenheit = parseFloat(document.getElementById("display").value);
 
-document.getElementById("display") = document.getElementById("temperaturacelsius") 
+   if (isNaN(Fahrenheit)) {
+        document.getElementById("display").value = NaN;
+    } 
 
-
-
-
+let celsius = (Fahrenheit - 32) * 5/9;
+document.getElementById("temperaturacelsius").innerHTML = celsius.toFixed(1);
 }
+
+
+
 </script>
 
-
-
-
-
-
-
-
 </body>
-
-
 
 </html>
